@@ -1,0 +1,150 @@
+body {
+  margin: 0;
+}
+
+.landing-page {
+  background-image: url("/assets/negative-space-black-forest-dawn.jpg");
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  background-color: rgba(231, 223, 223, 0.1);
+}
+@media screen and (min-width: 1200px) {
+  header {
+    justify-content: flex-end;
+    padding: 20px;
+  }
+}
+
+nav {
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin: 20px;
+}
+nav a {
+  text-decoration: none;
+  color: white;
+  padding: 20px;
+}
+nav a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.text {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px;
+  height: 70vh;
+}
+
+main {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.team__container {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}
+@media screen and (min-width: 1200px) {
+  .team__container {
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 150px;
+  }
+}
+
+.team__image {
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  box-shadow: 5px 5px 5px 5px #ccc;
+}
+@media screen and (min-width: 1200px) {
+  .team__image {
+    height: 450px;
+    width: 450px;
+    margin: 20px;
+  }
+}
+
+.team__info {
+  background-color: rgb(202, 198, 198);
+  padding: 30px;
+  margin: 20px;
+  width: 250px;
+  border-radius: 10px;
+  align-items: flex-start;
+}
+@media screen and (min-width: 1200px) {
+  .team__info {
+    width: 450px;
+    margin: 20px;
+  }
+}
+
+footer {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-around;
+}
+@media screen and (min-width: 1200px) {
+  footer {
+    flex-direction: row;
+  }
+}
+
+.team__contact {
+  padding: 20px;
+}
+.team__contact a {
+  text-decoration: none;
+  color: white;
+  padding-left: 10px;
+}
+.team__contact a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.bi-quote {
+  font-size: 35px;
+  transform: rotate(180deg);
+}
+
+.bi-arrow-down-circle-fill {
+  font-size: 25px;
+  padding: 30px;
+}
+
+.bi-arrow-down-circle {
+  color: white;
+  font-size: 25px;
+  padding: 30px;
+}
+
+.landing-text {
+  font-size: 1.3rem;
+}
+
+/*# sourceMappingURL=main.css.map */
