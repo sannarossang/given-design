@@ -2,6 +2,118 @@ body {
   margin: 0;
 }
 
+a {
+  color: white;
+}
+
+.header {
+  background-color: rgba(231, 223, 223, 0.1);
+  width: 100%;
+  position: absolute;
+}
+@media screen and (min-width: 1200px) {
+  .header li {
+    justify-content: flex-end;
+  }
+}
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+}
+.header a {
+  display: block;
+  padding: 5px;
+  text-decoration: none;
+}
+@media screen and (min-width: 1200px) {
+  .header a {
+    padding: 20px 30px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .header a:hover {
+    text-decoration: underline;
+  }
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  clear: both;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+}
+@media screen and (min-width: 1200px) {
+  .menu {
+    clear: none;
+    max-height: none;
+    justify-content: flex-end;
+    flex-direction: row;
+  }
+}
+
+.menu-icon {
+  padding: 28px 20px;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+@media screen and (min-width: 1200px) {
+  .menu-icon {
+    display: none;
+  }
+}
+.menu-icon .nav-icon {
+  background: white;
+  display: block;
+  height: 2px;
+  width: 18px;
+  position: relative;
+  transition: background 0.2s ease-out;
+}
+.menu-icon .nav-icon::before {
+  background: white;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+  top: 5px;
+}
+.menu-icon .nav-icon::after {
+  background: white;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+  top: -5px;
+}
+
+.menu-btn {
+  display: none;
+}
+.menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+.menu-btn:checked ~ .menu-icon .nav-icon {
+  background: transparent;
+}
+.menu-btn:checked ~ .menu-icon .nav-icon::before {
+  transform: rotate(-45deg);
+  top: 0;
+}
+.menu-btn:checked ~ .menu-icon .nav-icon::after {
+  transform: rotate(45deg);
+  top: 0;
+}
+
 .landing-page {
   background-image: url("/assets/negative-space-black-forest-dawn.jpg");
   background-size: cover;
@@ -9,33 +121,6 @@ body {
   display: flex;
   text-align: center;
   flex-direction: column;
-}
-
-header {
-  display: flex;
-  background-color: rgba(231, 223, 223, 0.1);
-}
-@media screen and (min-width: 1200px) {
-  header {
-    justify-content: flex-end;
-    padding: 20px;
-  }
-}
-
-nav {
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  margin: 20px;
-}
-nav a {
-  text-decoration: none;
-  color: white;
-  padding: 20px;
-}
-nav a:hover {
-  cursor: pointer;
-  text-decoration: underline;
 }
 
 .text {
@@ -75,7 +160,7 @@ main {
   height: 250px;
   width: 250px;
   border-radius: 50%;
-  box-shadow: 5px 5px 5px 5px #ccc;
+  box-shadow: 0px 5px 15px #ccc;
 }
 @media screen and (min-width: 1200px) {
   .team__image {
@@ -115,7 +200,7 @@ footer {
 }
 
 .team__contact {
-  padding: 20px;
+  padding: 20px 20px 30px 80px;
 }
 .team__contact a {
   text-decoration: none;
@@ -125,6 +210,10 @@ footer {
 .team__contact a:hover {
   cursor: pointer;
   text-decoration: underline;
+}
+
+.black_arrow a {
+  color: black;
 }
 
 .bi-quote {

@@ -1,6 +1,7 @@
 @use "mixins";
 @use "variables";
 @use "reset";
+@use "nav";
 
 .landing-page {
   background-image: url("/assets/negative-space-black-forest-dawn.jpg");
@@ -9,28 +10,6 @@
   display: flex;
   text-align: center;
   flex-direction: column;
-}
-
-header {
-  display: flex;
-  background-color: rgba(231, 223, 223, 0.1);
-
-  @include mixins.desktop {
-    justify-content: flex-end;
-    padding: 20px;
-  }
-}
-
-nav {
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  margin: 20px;
-
-  a {
-    @include mixins.link;
-    padding: 20px;
-  }
 }
 
 .text {
@@ -103,12 +82,16 @@ footer {
 }
 
 .team__contact {
-  padding: 20px;
+  padding: 20px 20px 30px 80px;
 
   a {
     @include mixins.link;
     padding-left: 10px;
   }
+}
+
+.black_arrow a {
+  color: black;
 }
 
 .bi-quote {
