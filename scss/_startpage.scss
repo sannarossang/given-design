@@ -1,9 +1,8 @@
 @use "mixins";
 @use "variables";
 @use "reset";
-@use "nav";
 
-.landing-page {
+.background {
   background-image: url("/assets/negative-space-black-forest-dawn.jpg");
   background-size: cover;
   height: 100vh;
@@ -12,81 +11,19 @@
   flex-direction: column;
 }
 
-.text {
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin: 20px;
-  height: 70vh;
-}
-
-main {
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.team__container {
-  display: flex;
-  text-align: center;
-  flex-direction: column;
-
-  @include mixins.desktop {
-    flex-direction: row;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+.startpage {
+  &__text {
+    color: white;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    column-gap: 150px;
-  }
-}
-
-//.team_about {
-//justify-content: center;
-//align-items: center;
-//}
-
-.team__image {
-  @include mixins.image;
-
-  @include mixins.desktop {
-    height: 450px;
-    width: 450px;
+    flex-direction: column;
     margin: 20px;
+    height: 80vh;
   }
-}
 
-.team__info {
-  @include mixins.box;
-
-  @include mixins.desktop {
-    width: 450px;
-    margin: 20px;
-  }
-}
-
-footer {
-  background-color: black;
-  color: white;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: space-around;
-
-  @include mixins.desktop {
-    flex-direction: row;
-  }
-}
-
-.team__contact {
-  padding: 20px 20px 30px 80px;
-
-  a {
-    @include mixins.link;
-    padding-left: 10px;
+  &__text--small {
+    font-size: 20.8px;
   }
 }
 
@@ -108,8 +45,4 @@ footer {
   color: white;
   font-size: 25px;
   padding: 30px;
-}
-
-.landing-text {
-  font-size: 1.3rem;
 }

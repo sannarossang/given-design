@@ -10,9 +10,9 @@
   background-color: rgb(202, 198, 198);
   padding: 30px;
   margin: 20px;
-  width: 250px;
+  width: 300px;
   border-radius: 10px;
-  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 @mixin image {
