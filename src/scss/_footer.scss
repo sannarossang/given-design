@@ -1,0 +1,25 @@
+@use "mixins";
+@use "variables";
+@use "reset";
+
+.contact {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-around;
+
+  @include mixins.desktop {
+    flex-direction: row;
+  }
+
+  &__team {
+    padding: 20px 20px 30px 90px;
+
+    a {
+      @include mixins.link;
+      padding-left: 10px;
+    }
+  }
+}

@@ -1,0 +1,64 @@
+@use "mixins";
+@use "variables";
+@use "reset";
+
+main {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.team {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+
+  @include mixins.desktop {
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 150px;
+  }
+
+  &__title {
+    font-size: 16px;
+    align-items: center;
+  }
+
+  &__image {
+    @include mixins.image;
+    @include mixins.desktop {
+      height: 450px;
+      width: 450px;
+      margin: 20px;
+    }
+  }
+
+  &__text {
+    @include mixins.box;
+    @include mixins.desktop {
+      width: 450px;
+      margin: 20px;
+    }
+  }
+}
+
+.bi-quote {
+  display: inline-block;
+  font-size: 35px;
+  transform: rotate(180deg);
+}
+
+.bi-arrow-down-circle-fill {
+  font-size: 25px;
+  padding: 30px;
+  color: black;
+  margin: 30px;
+}
+
+.black_arrow {
+  padding: 20px;
+}

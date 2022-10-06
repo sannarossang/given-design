@@ -1,0 +1,48 @@
+@use "mixins";
+@use "variables";
+@use "reset";
+
+.background {
+  background-image: url("/assets/negative-space-black-forest-dawn.jpg");
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}
+
+.startpage {
+  &__text {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px;
+    height: 80vh;
+  }
+
+  &__text--small {
+    font-size: 20.8px;
+  }
+}
+
+.black_arrow a {
+  color: black;
+}
+
+.bi-quote {
+  font-size: 35px;
+  transform: rotate(180deg);
+}
+
+.bi-arrow-down-circle-fill {
+  font-size: 25px;
+  padding: 30px;
+}
+
+.bi-arrow-down-circle {
+  color: white;
+  font-size: 25px;
+  padding: 30px;
+}

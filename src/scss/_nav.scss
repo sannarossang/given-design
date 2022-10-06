@@ -1,0 +1,120 @@
+@use "mixins";
+@use "variables";
+
+a {
+  color: white;
+}
+
+.header {
+  background-color: rgba(231, 223, 223, 0.1);
+  width: 100%;
+  position: absolute;
+
+  li {
+    @include mixins.desktop {
+      justify-content: flex-end;
+    }
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+  }
+
+  a {
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+
+    @include mixins.desktop {
+      padding: 20px 30px;
+    }
+
+    &:hover {
+      @include mixins.desktop {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  clear: both;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+
+  @include mixins.desktop {
+    clear: none;
+    max-height: none;
+    justify-content: flex-end;
+    flex-direction: row;
+  }
+}
+
+.menu-icon {
+  padding: 28px 20px;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+
+  @include mixins.desktop {
+    display: none;
+  }
+
+  .nav-icon {
+    background: white;
+    display: block;
+    height: 2px;
+    width: 18px;
+    position: relative;
+    transition: background 0.2s ease-out;
+
+    &::before {
+      background: white;
+      content: "";
+      display: block;
+      height: 100%;
+      position: absolute;
+      transition: all 0.2s ease-out;
+      width: 100%;
+      top: 5px;
+    }
+
+    &::after {
+      background: white;
+      content: "";
+      display: block;
+      height: 100%;
+      position: absolute;
+      transition: all 0.2s ease-out;
+      width: 100%;
+      top: -5px;
+    }
+  }
+}
+
+.menu-btn {
+  display: none;
+  &:checked ~ .menu {
+    max-height: 240px;
+  }
+  &:checked ~ .menu-icon .nav-icon {
+    background: transparent;
+  }
+
+  &:checked ~ .menu-icon .nav-icon::before {
+    transform: rotate(-45deg);
+    top: 0;
+  }
+
+  &:checked ~ .menu-icon .nav-icon::after {
+    transform: rotate(45deg);
+    top: 0;
+  }
+}
