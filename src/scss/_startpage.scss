@@ -1,48 +1,58 @@
 @use "mixins";
-@use "variables";
+@use "variables" as v;
 @use "reset";
 
 .background {
-  background-image: url("/assets/negative-space-black-forest-dawn.jpg");
+  background-image: url("./../assets/negative-space-black-forest-dawn.jpg");
   background-size: cover;
-  height: 100vh;
+  background-position: center;
   display: flex;
-  text-align: center;
   flex-direction: column;
+  height: 100vh;
+  text-align: center;
 }
 
 .startpage {
+  display: flex;
+  height: 100vh;
+
   &__text {
-    color: white;
+    color: v.$primary-color;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    margin: 20px;
-    height: 80vh;
+    height: 100vh;
+    width: 100vw;
+    font-size: 1em;
+    padding: 60px;
   }
 
   &__text--small {
-    font-size: 20.8px;
+    font-size: 1.4em;
+  }
+
+  &__arrow {
+    position: absolute;
+    width: 100%;
+    bottom: 2px;
+    margin: 0 auto;
+    a {
+      color: v.$primary-color;
+      size: 2em;
+    }
+    .bi-arrow-down-circle-fill::before {
+      padding: 35px;
+      font-size: 2em;
+    }
   }
 }
 
-.black_arrow a {
-  color: black;
-}
+.team__heading {
+  padding: 15px;
+  font-size: 2em;
 
-.bi-quote {
-  font-size: 35px;
-  transform: rotate(180deg);
-}
-
-.bi-arrow-down-circle-fill {
-  font-size: 25px;
-  padding: 30px;
-}
-
-.bi-arrow-down-circle {
-  color: white;
-  font-size: 25px;
-  padding: 30px;
+  @include mixins.desktop {
+    font-size: 1.5em;
+  }
 }

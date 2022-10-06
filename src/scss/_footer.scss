@@ -1,13 +1,13 @@
 @use "mixins";
-@use "variables";
+@use "variables" as v;
 @use "reset";
 
 .contact {
-  background-color: black;
-  color: white;
+  background-color: v.$secondary-color;
+  color: v.$primary-color;
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
+  flex-wrap: wrap;
   justify-content: space-around;
 
   @include mixins.desktop {
@@ -15,11 +15,15 @@
   }
 
   &__team {
-    padding: 20px 20px 30px 90px;
-
+    padding: 20px 0px 5px 80px;
+    font-size: 1.2em;
     a {
       @include mixins.link;
       padding-left: 10px;
+    }
+
+    @include mixins.desktop {
+      font-size: 1em;
     }
   }
 }

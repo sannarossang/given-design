@@ -1,9 +1,9 @@
 @use "mixins";
-@use "variables";
+@use "variables" as v;
 @use "reset";
 
 main {
-  background-color: white;
+  background-color: v.$primary-color;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,53 +12,68 @@ main {
 
 .team {
   display: flex;
-  text-align: center;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
+  width: 100%;
 
   @include mixins.desktop {
     flex-direction: row;
     justify-content: space-evenly;
-    flex-wrap: wrap;
     align-items: center;
-    column-gap: 150px;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    justify-items: center;
+    align-items: center;
+    @include mixins.desktop {
+      width: 50%;
+    }
   }
 
   &__title {
-    font-size: 16px;
     align-items: center;
+    justify-content: center;
+    font-size: 16px;
   }
 
   &__image {
     @include mixins.image;
     @include mixins.desktop {
-      height: 450px;
-      width: 450px;
       margin: 20px;
+      height: 50%;
+      width: 50%;
     }
   }
 
   &__text {
     @include mixins.box;
     @include mixins.desktop {
-      width: 450px;
       margin: 20px;
+      width: 50%;
+    }
+  }
+
+  &__arrow {
+    a {
+      color: v.$secondary-color;
+    }
+
+    .bi-arrow-down-circle-fill::before {
+      padding: 20px;
+      font-size: 2em;
     }
   }
 }
 
 .bi-quote {
   display: inline-block;
-  font-size: 35px;
   transform: rotate(180deg);
-}
-
-.bi-arrow-down-circle-fill {
-  font-size: 25px;
-  padding: 30px;
-  color: black;
-  margin: 30px;
-}
-
-.black_arrow {
-  padding: 20px;
+  font-size: 35px;
 }

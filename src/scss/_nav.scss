@@ -1,14 +1,15 @@
 @use "mixins";
-@use "variables";
+@use "variables" as v;
 
 a {
-  color: white;
+  color: v.$primary-color;
 }
 
 .header {
   background-color: rgba(231, 223, 223, 0.1);
   width: 100%;
   position: absolute;
+  font-size: 1.2em;
 
   li {
     @include mixins.desktop {
@@ -42,25 +43,25 @@ a {
 
 .menu {
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
   clear: both;
   max-height: 0;
   transition: max-height 0.2s ease-out;
 
   @include mixins.desktop {
+    flex-direction: row;
+    justify-content: flex-end;
     clear: none;
     max-height: none;
-    justify-content: flex-end;
-    flex-direction: row;
   }
 }
 
 .menu-icon {
-  padding: 28px 20px;
-  position: relative;
   display: flex;
   justify-content: flex-end;
+  position: relative;
+  padding: 28px 25px;
   cursor: pointer;
 
   @include mixins.desktop {
@@ -68,33 +69,36 @@ a {
   }
 
   .nav-icon {
-    background: white;
+    background: v.$primary-color;
     display: block;
-    height: 2px;
-    width: 18px;
+    height: 5px;
+    width: 30px;
+    border-radius: 15px;
     position: relative;
     transition: background 0.2s ease-out;
 
     &::before {
-      background: white;
+      background: v.$primary-color;
       content: "";
       display: block;
       height: 100%;
       position: absolute;
+      border-radius: 15px;
       transition: all 0.2s ease-out;
       width: 100%;
-      top: 5px;
+      top: 11px;
     }
 
     &::after {
-      background: white;
+      background: v.$primary-color;
       content: "";
       display: block;
       height: 100%;
       position: absolute;
+      border-radius: 15px;
       transition: all 0.2s ease-out;
       width: 100%;
-      top: -5px;
+      top: -11px;
     }
   }
 }
